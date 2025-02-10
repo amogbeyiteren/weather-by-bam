@@ -39,7 +39,7 @@ export default function App() {
 
   return (
     <div className="min-h-screen bg-gradient-to-t from-[#012B69]/52 via-[#012561]/72 to-[#00235D] p-4 md:p-8 lg:p-12">
-      <div className="w-full flex justify-end flex-wrap gap-x-4 gap-y-2 mb-8">
+      <div className="w-full flex justify-end flex-wrap gap-x-4 gap-y-2 mb-8 font-rubik">
         <span
           onClick={() => setTempUnit((prev) => (prev === "C" ? "F" : "C"))}
           className="text-[#CCCCCC] border border-white/30 rounded-lg w-[200px] h-[40px] flex items-center justify-start px-4 py-2 gap-[2px] cursor-pointer"
@@ -129,11 +129,11 @@ export default function App() {
                       className="w-[21px] h-[17px] object-fill "
                     />
 
-                    <span className="w-16 h-[17px] font-inter font-medium text-sm leading-[17px] flex items-center tracking-[0.03em] uppercase text-white/75">
+                    <span className="w-16 h-[17px]  font-medium text-sm leading-[17px] flex items-center tracking-[0.03em] uppercase text-white/75">
                       SUNRISE
                     </span>
                   </div>
-                  <span className="font-inter font-normal text-[32px] mt-6 leading-[39px] tracking-[0.05em] text-white">
+                  <span className=" font-normal text-[32px] mt-6 leading-[39px] tracking-[0.05em] text-white">
                     {" "}
                     {sunrise.hours > 12 ? sunrise.hours - 12 : sunrise.hours}:
                     {sunrise.minutes} <br />
@@ -144,7 +144,7 @@ export default function App() {
                     className="mt-2 w-[135px] h-[35px] object-fill "
                   />
 
-                  <span className="font-inter absolute bottom-[32px] font-regular  text-base leading-[19px] tracking-[0.05em] text-white">
+                  <span className=" absolute bottom-[32px] font-regular  text-base leading-[19px] tracking-[0.05em] text-white">
                     Sunset:{" "}
                     {sunset.hours > 12 ? sunset.hours - 12 : sunset.hours}:
                     {sunset.minutes}
@@ -168,18 +168,18 @@ export default function App() {
                       className="h-[17px] object-fill "
                     />
 
-                    <span className="w-16 h-[17px] font-inter font-medium text-sm leading-[17px] flex items-center tracking-[0.03em] uppercase text-white/75">
+                    <span className="w-16 h-[17px]  font-medium text-sm leading-[17px] flex items-center tracking-[0.03em] uppercase text-white/75">
                       RAINFALL
                     </span>
                   </div>
-                  <span className="font-sans font-normal text-[32px] mt-6 tracking-[0.05em]  text-white">
+                  <span className=" font-normal text-[32px] mt-6 tracking-[0.05em]  text-white">
                     {weatherData?.daily.rainSum[0].toPrecision(3)} MM
                   </span>
                   <span className="text-[12px] font-medium text-white">
                     in last 24h
                   </span>
 
-                  <span className="font-inter absolute bottom-[32px] text-wrap font-normal text-[16px] text-white pr-4">
+                  <span className=" absolute bottom-[32px] text-wrap font-normal text-[16px] text-white pr-4">
                     Next expexted is
                     {[Array(1,4)].map((_, index) => {
                         if (weatherData?.daily?.rainSum[index] && weatherData?.daily?.rainSum[index] > 0) {
@@ -205,7 +205,7 @@ export default function App() {
         </div>
 
         <div className=" max-w-[930px] w-full flex flex-col justify-center items-center p-4  rounded-[16px] bg-gradient-to-l from-[rgba(23,38,92,0.6)] to-[rgba(2,110,189,0.408)] ">
-          <span className="font-inter w-full font-normal text-xs leading-[15px] flex items-center uppercase text-white border-b pb-2 border-white/30">
+          <span className=" w-full font-normal text-xs leading-[15px] flex items-center uppercase text-white border-b pb-2 border-white/30">
             CONDITION THROUGHOUT TODAY
           </span>
           {isLoading || isRefetching ? (
@@ -216,7 +216,7 @@ export default function App() {
           ) : (
             <div className="w-full grid  grid-cols-5 lg:grid-cols-15 gap-2 pt-4">
               <div className="w-full flex flex-col justify-between items-center gap-2 max-h-[86px] mb-4 lg:mb-0">
-                <span className="font-inter font-medium text-base leading-[100%] flex items-center text-white">
+                <span className=" font-medium text-base leading-[100%] flex items-center text-white">
                   Now
                 </span>
 
@@ -225,7 +225,7 @@ export default function App() {
                   className="w-[27px] object-fill"
                 />
 
-                <span className="font-inter text-white font-medium text-base leading-[19px] tracking-[0.05em]">
+                <span className=" text-white font-medium text-base leading-[19px] tracking-[0.05em]">
                   {Math.round(
                     formatTemperature(weatherData?.current.temperature2m || 0)
                   )}
@@ -234,11 +234,11 @@ export default function App() {
               </div>
               <div className="w-full flex flex-col justify-between items-center gap-2 max-h-[86px] mb-4 lg:mb-0">
                 <span className="flex justify-center items-center gap-[2px]">
-                  <span className=" font-inter font-medium text-base leading-[100%] flex items-center text-white">
+                  <span className="  font-medium text-base leading-[100%] flex items-center text-white">
                     {sunrise.hours > 12 ? sunrise.hours - 12 : sunrise.hours}:
                     {sunrise.minutes} <br />
                   </span>
-                  <span className="font-inter font-medium text-xs leading-[15px] flex items-center text-white">
+                  <span className=" font-medium text-xs leading-[15px] flex items-center text-white">
                     {sunrise.hours >= 12 ? "PM" : "AM"}
                   </span>
                 </span>
@@ -248,7 +248,7 @@ export default function App() {
                   className="w-[27px] object-fill"
                 />
 
-                <span className="font-inter text-white font-bold text-base leading-[19px] tracking-[0.05em]">
+                <span className=" text-white font-bold text-base leading-[19px] tracking-[0.05em]">
                   Sunrise
                 </span>
               </div>
@@ -260,10 +260,10 @@ export default function App() {
                     className="w-full flex flex-col justify-between items-center gap-2 max-h-[86px] mb-4 lg:mb-0"
                   >
                     <span className="flex justify-center items-center gap-[2px]">
-                      <span className="font-inter font-medium text-base leading-[100%] flex items-center text-white">
+                      <span className=" font-medium text-base leading-[100%] flex items-center text-white">
                         {hour % 12 || 12}
                       </span>
-                      <span className="font-inter font-medium text-xs leading-[15px] flex items-center text-white">
+                      <span className=" font-medium text-xs leading-[15px] flex items-center text-white">
                         {hour >= 12 ? "PM" : "AM"}
                       </span>
                     </span>
@@ -273,7 +273,7 @@ export default function App() {
                       )}
                       className="w-[27px] object-fill"
                     />
-                    <span className="font-inter text-white font-medium text-base leading-[19px] tracking-[0.05em]">
+                    <span className=" text-white font-medium text-base leading-[19px] tracking-[0.05em]">
                       {Math.round(
                         formatTemperature(
                           weatherData?.hourly.temperature2m[index] || 0
@@ -286,18 +286,18 @@ export default function App() {
               )}
               <div className="w-full flex flex-col justify-between items-center gap-2 max-h-[86px] mb-4 lg:mb-0">
                 <span className="flex justify-center items-center gap-[2px]">
-                  <span className=" font-inter font-medium text-base leading-[100%] flex items-center text-white">
+                  <span className="  font-medium text-base leading-[100%] flex items-center text-white">
                     {sunset.hours > 12 ? sunset.hours - 12 : sunset.hours}:
                     {sunset.minutes}
                   </span>
-                  <span className="font-inter font-medium text-xs leading-[15px] flex items-center text-white">
+                  <span className=" font-medium text-xs leading-[15px] flex items-center text-white">
                     {sunset.hours >= 12 ? "PM" : "AM"}
                   </span>
                 </span>
 
                 <img src={assetIcons.sunSet} className="w-[27px] object-fill" />
 
-                <span className="font-inter text-white font-bold text-base leading-[19px] tracking-[0.05em]">
+                <span className=" text-white font-bold text-base leading-[19px] tracking-[0.05em]">
                   Sunset
                 </span>
               </div>
@@ -307,7 +307,7 @@ export default function App() {
         <div className=" w-full flex flex-wrap justify-center items-center gap-[26px]">
           <div className=" h-[295px] min-w-[288px] sm:min-w-[320px] md:max-w-[450px] p-6  flex-1 flex flex-col justify-start items-start rounded-[16px] pb-[34px] bg-gradient-to-t from-[rgba(1,24,78,0.444)] from-15.42% via-[rgba(1,37,97,0.462)] via-54.1% to-[rgba(0,29,87,0.45)] to-92.97%">
             <div className="w-full flex flex-row justify-start items-start border-b border-white/30 pb-2">
-              <span className="font-inter font-normal text-[12px] leading-[15px] text-start uppercase text-white">
+              <span className=" font-normal text-[12px] leading-[15px] text-start uppercase text-white">
                 5-day Forecast
               </span>
             </div>
@@ -319,7 +319,7 @@ export default function App() {
             ) : (
               <div className="w-full  h-full grid grid-rows-5 pt-6">
                 <div className="w-full flex flex-row justify-between items-center">
-                  <span className="font-inter w-[43px] font-medium text-[16px] leading-[19px] text-start  text-white">
+                  <span className=" w-[43px] font-medium text-[16px] leading-[19px] text-start  text-white">
                     Today
                   </span>
                   <img
@@ -329,7 +329,7 @@ export default function App() {
                     className="w-[20px] object-fill"
                   />
                   <div className="flex w-1/2 lg:w-[fit]  flex-row justify-between gap-3 items-center">
-                    <span className="font-inter font-medium text-[16px] leading-[19px] text-start tracking-[0.05em] text-white/80">
+                    <span className=" font-medium text-[16px] leading-[19px] text-start tracking-[0.05em] text-white/80">
                       {Math.round(
                         formatTemperature(
                           weatherData?.daily.temperature2mMin[0] || 0
@@ -338,7 +338,7 @@ export default function App() {
                       °
                     </span>
                     <div className="w-full lg:w-[130px] h-[4px] rounded-[10px] bg-gradient-to-r from-[#B7FF7E] from-24.85% via-[#FFE458] via-60.9% to-[#FFE458]" />
-                    <span className="font-inter font-medium text-[16px] leading-[19px] text-start tracking-[0.05em] text-white">
+                    <span className=" font-medium text-[16px] leading-[19px] text-start tracking-[0.05em] text-white">
                       {Math.round(
                         formatTemperature(
                           weatherData?.daily.temperature2mMax[0] || 0
@@ -363,7 +363,7 @@ export default function App() {
                       key={index}
                       className="  flex flex-row justify-between items-center"
                     >
-                      <span className="font-inter w-[43px] font-medium text-[16px] leading-[19px] text-start text-white">
+                      <span className=" w-[43px] font-medium text-[16px] leading-[19px] text-start text-white">
                         {dayName}
                       </span>
                       <img
@@ -371,7 +371,7 @@ export default function App() {
                         className="w-[20px] object-fill"
                       />
                       <div className="flex w-1/2 lg:w-[fit] flex-row justify-between gap-3 items-center">
-                        <span className="font-inter font-medium text-[16px] leading-[19px] text-start tracking-[0.05em] text-white/80">
+                        <span className=" font-medium text-[16px] leading-[19px] text-start tracking-[0.05em] text-white/80">
                           {Math.round(
                             formatTemperature(
                               weatherData?.daily.temperature2mMin[dayIndex] || 0
@@ -380,7 +380,7 @@ export default function App() {
                           °
                         </span>
                         <div className="w-full lg:w-[130px]  h-[4px] rounded-[10px] bg-gradient-to-r from-[#B7FF7E] from-24.85% via-[#FFE458] via-60.9% to-[#FFE458]" />
-                        <span className="font-inter font-medium text-[16px] leading-[19px] text-start tracking-[0.05em] text-white">
+                        <span className=" font-medium text-[16px] leading-[19px] text-start tracking-[0.05em] text-white">
                           {Math.round(
                             formatTemperature(
                               weatherData?.daily.temperature2mMax[dayIndex] || 0
@@ -411,15 +411,15 @@ export default function App() {
                       className="w-[21px] h-[17px] object-fill "
                     />
 
-                    <span className="w-16 h-[17px] font-inter font-medium text-sm leading-[17px] flex items-center tracking-[0.03em] uppercase text-white/75">
+                    <span className="w-16 h-[17px]  font-medium text-sm leading-[17px] flex items-center tracking-[0.03em] uppercase text-white/75">
                       HUMIDITY
                     </span>
                   </div>
-                  <span className="font-sans font-normal text-[32px] mt-6 leading-[39px] tracking-[0.05em] text-white">
+                  <span className="font-normal text-[32px] mt-6 leading-[39px] tracking-[0.05em] text-white">
                     {weatherData?.current.relativeHumidity2m || 0} %
                   </span>
 
-                  <span className="font-inter absolute bottom-[32px] font-normal  text-base leading-[19px] text-white pr-4">
+                  <span className=" absolute bottom-[32px] font-normal  text-base leading-[19px] text-white pr-4">
                     The dew point is{" "}
                     {Math.round(
                       formatTemperature(weatherData?.hourly.dewPoint2m[0] || 0)
@@ -444,20 +444,20 @@ export default function App() {
                       className="h-[17px] object-fill "
                     />
 
-                    <span className="w-16 h-[17px] font-inter font-medium text-sm leading-[17px] flex items-center tracking-[0.03em] uppercase text-white/75">
+                    <span className="w-16 h-[17px]  font-medium text-sm leading-[17px] flex items-center tracking-[0.03em] uppercase text-white/75">
                       WIND
                     </span>
                   </div>
                   <div className="w-full flex flex-row justify-start items-center mt-6">
-                    <span className="font-inter font-normal text-[32px] tracking-[0.05em]  text-white">
+                    <span className=" font-normal text-[32px] tracking-[0.05em]  text-white">
                       {(weatherData?.current.windSpeed10m || 0).toFixed(2)}
                     </span>
-                    <span className="font-inter font-normal text-[12px]  text-white">
+                    <span className=" font-normal text-[12px]  text-white">
                       KM/H
                     </span>
                   </div>
 
-                  <span className="font-inter absolute bottom-[32px] font-normal  text-base leading-[19px] text-white pr-4">
+                  <span className=" absolute bottom-[32px] font-normal  text-base leading-[19px] text-white pr-4">
                     Time now:{" "}
                     
                     {weatherData?.current.time.toFormat("HH:mm")}

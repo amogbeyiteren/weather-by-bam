@@ -10,6 +10,8 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@fontsource-variable/inter": "^5.1.1",
+    "@fontsource-variable/rubik": "^5.1.1",
     "@heroicons/react": "^2.2.0",
     "@tailwindcss/vite": "^4.0.4",
     "@tanstack/react-query": "^5.66.0",

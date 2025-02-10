@@ -1,23 +1,30 @@
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/rubik';
 @import "tailwindcss";
+
+@theme {
+  --font-sans: Inter, system-ui, sans-serif;
+  --font-rubik: Rubik, system-ui, sans-serif;
+}
 
 /* Custom scrollbar styles */
 ::-webkit-scrollbar {
-    width: 8px; /* Width of the scrollbar */
+    width: 8px; 
   }
   
   ::-webkit-scrollbar-track {
-    background: rgba(0,29,87,0.45); /* Color of the track */
-    border-radius: 4px; /* Radius for the track */
+    background: rgba(0,29,87,0.45); 
+    border-radius: 4px; 
   }
   
   ::-webkit-scrollbar-thumb {
-    background: rgba(0,29,87,0.45); /* Color of the scrollbar thumb */
-    border-radius: 16px; /* Radius for the thumb */
+    background: rgba(0,29,87,0.45); 
+    border-radius: 16px;
   }
 
   
-  /* Firefox scrollbar styles */
+/* Firefox scrollbar styles */
 html {
-  scrollbar-width: thin; /* "auto" or "thin" */
-  scrollbar-color: rgba(0,29,87,0.45) rgba(0,29,87,0.45); /* thumb and track color */
+  scrollbar-width: thin;
+  scrollbar-color: rgba(0,29,87,0.45) rgba(0,29,87,0.45); 
 }

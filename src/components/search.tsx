@@ -111,7 +111,7 @@ const LocationSearch: React.FC<LocationSearchProps> = ({
     <div className="relative">
       <form
         onSubmit={(e: FormEvent) => e.preventDefault()}
-        className=" border border-white/30 rounded-lg w-[300px] h-[40px] flex items-center justify-start px-4 py-2 gap-1"
+        className=" border border-white/30 font-rubik rounded-lg w-[300px] h-[40px] flex items-center justify-start px-4 py-2 gap-1"
       >
         <img src={assetIcons.searchIcon} alt="Search" className="w-3 h-3" />
         <input
