@@ -1,0 +1,23 @@
+@import "tailwindcss";
+
+/* Custom scrollbar styles */
+::-webkit-scrollbar {
+    width: 8px; /* Width of the scrollbar */
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(0,29,87,0.45); /* Color of the track */
+    border-radius: 4px; /* Radius for the track */
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: rgba(0,29,87,0.45); /* Color of the scrollbar thumb */
+    border-radius: 16px; /* Radius for the thumb */
+  }
+
+  
+  /* Firefox scrollbar styles */
+html {
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: rgba(0,29,87,0.45) rgba(0,29,87,0.45); /* thumb and track color */
+}
