@@ -1,20 +1,23 @@
+import { DateTime } from "luxon";
 import { assetIcons } from "../assets";
 
 export const weatherCodeToIcon = (weatherCode: number) => {
   if (weatherCode === 0) return assetIcons.sunSmall;
   if ([1, 2].includes(weatherCode)) return assetIcons.sunCloudSmall;
-  if ([3, 4].includes(weatherCode)) return assetIcons.cloudSmall;
-  if ([80, 81, 82].includes(weatherCode)) return assetIcons.rain;
-  return assetIcons.rain;
+  if ([3, 4, 61, 80].includes(weatherCode)) return assetIcons.cloudSmall;
+  if ([63, 65, 81, 82].includes(weatherCode)) return assetIcons.rain;
+  return assetIcons.sunCloudSmall;
 };
+
 
 export const weatherCodeToBigIcon = (weatherCode: number) => {
   if (weatherCode === 0) return assetIcons.sunBig;
   if ([1, 2].includes(weatherCode)) return assetIcons.sunCloudBig;
-  if ([3, 4].includes(weatherCode)) return assetIcons.sunRainBig;
-  if ([80, 81, 82].includes(weatherCode)) return assetIcons.rainyStormBig;
-  return assetIcons.rainyStormBig;
+  if ([3, 4, 61, 80].includes(weatherCode)) return assetIcons.sunRainBig;
+  if ([ 63, 65, 80, 81, 82].includes(weatherCode)) return assetIcons.rainyStormBig;
+  return assetIcons.sunCloudBig;
 };
+
 
 export const weatherCodeToWeather = (weatherCode: number) => {
   if (weatherCode === 0) return 'Clear';
@@ -27,9 +30,11 @@ export const weatherCodeToWeather = (weatherCode: number) => {
   return 'Unknown Weather';
 };
 
-export const formatTime24 = (timestamp: bigint) => {
-  const date = new Date(Number(timestamp) * 1000);
-  const hours = date.getHours();
-  const minutes = date.getMinutes().toString().padStart(2, "0");
+export const formatTime24 = (timestamp: bigint, timezone: string) => {
+  const date = DateTime.fromSeconds(Number(timestamp), { zone: timezone });
+  const hours = date.hour;
+  const minutes = date.minute.toString().padStart(2, "0");
   return { hours, minutes };
+
+
 }; 

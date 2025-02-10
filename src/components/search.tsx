@@ -96,9 +96,7 @@ const LocationSearch: React.FC<LocationSearchProps> = ({
     setShowSuggestions(false);
     if (onSelect) {
       onSelect(suggestion.data);
-    } else {
-
-    }
+    } 
   };
 
   // Add handler for input changes

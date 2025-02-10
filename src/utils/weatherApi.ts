@@ -140,6 +140,7 @@ export const fetchWeather = async (
       sunset: daily.variables(4)!.valuesInt64(0)!,
       rainSum: daily.variables(5)!.valuesArray()!,
     },
+    timezone: timezone,
   };
 };
 

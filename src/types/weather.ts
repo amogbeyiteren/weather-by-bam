@@ -24,6 +24,7 @@ export interface WeatherData {
     sunset: bigint;
     rainSum: Float32Array;
   };
+  timezone: string;
 }
 
 export interface Location {
