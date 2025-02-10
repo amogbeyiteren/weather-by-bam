@@ -27,7 +27,7 @@ export const weatherCodeToWeather = (weatherCode: number) => {
   if (weatherCode === 80) return 'Slight Rain Showers';
   if (weatherCode === 81) return 'Moderate Rain Showers';
   if (weatherCode === 82) return 'Heavy Rain Showers';
-  return 'Unknown Weather';
+  return 'Weather';
 };
 
 export const formatTime24 = (timestamp: bigint, timezone: string) => {
